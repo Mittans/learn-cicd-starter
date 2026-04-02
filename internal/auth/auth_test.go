@@ -16,7 +16,7 @@ func Test_GetAPIKey_Valid(t *testing.T) {
 	header := http.Header{}
 	header.Set("Authorization", "ApiKey Bearer test-token")
 	msg, err := GetAPIKey(header)
-	if err == nil {
+	if err != nil {
 		t.Errorf(`GetAPIKEY("") = %q, %v, want "" error`, msg, err)
 	}
 }
